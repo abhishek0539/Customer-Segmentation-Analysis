@@ -20,13 +20,6 @@ from logger import log, get_log_buffer
 
 warnings.filterwarnings("ignore")
 
-# Install fpdf2 if not available
-# try:
-#     import fpdf
-# except ImportError:
-#     pip install fpdf2
-#     from fpdf import FPDF
-
 class AnalysisPDF(FPDF):
     def header(self):
         self.set_font('Arial', 'B', 12)
