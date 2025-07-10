@@ -11,7 +11,7 @@ from fpdf.enums import XPos, YPos
 from logger import log, get_log_buffer
 
 # API Key Configuration
-API_KEY = "AIzaSyAWprxsm_NJzmelCCIIrCF-GdwtJFTQ-5s"  # Replace with your actual API key
+API_KEY = "API-KEY"  # Replace with your actual API key
 try:
     genai.configure(api_key=API_KEY)
 except Exception as e:
