@@ -21,7 +21,7 @@ os.makedirs(REPORT_FOLDER, exist_ok=True)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        clear_log_buffer()  # ✅ Clear old logs
+        clear_log_buffer() 
         log("Previous logs cleared.")
 
         file = request.files['dataset']
@@ -30,13 +30,11 @@ def index():
             file.save(dataset_path)
             log("CSV uploaded successfully.")
 
-            # Clear previous chatbot summary (if exists)
             summary_path = os.path.join(REPORT_FOLDER, "chatbot_summary.pdf")
             if os.path.exists(summary_path):
                 os.remove(summary_path)
                 log("🧹 Cleared previous chatbot summary.")
 
-            # Generate new report
             report_path = os.path.join(REPORT_FOLDER, "report.pdf")
             log("📊 Starting analysis...")
             run_analysis_from_file(dataset_path, report_path)
@@ -65,7 +63,6 @@ def chatbot_summary():
     images = convert_pdf_to_images(pdf_path)
     insights = generate_insights(pdf_text, images)
 
-    # Always start with summary
     conversation = [{
         "title": "Initial Analysis Summary",
         "content": insights
@@ -94,7 +91,6 @@ def chatbot_summary():
                 "content": answer
             })
 
-    # ✅ Always generate or update chatbot_summary.pdf (even without follow-up)
     summary_path = os.path.join(REPORT_FOLDER, "chatbot_summary.pdf")
     generate_report_pdf(conversation, output_path=summary_path)
 
