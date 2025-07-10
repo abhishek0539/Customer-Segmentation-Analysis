@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4e73df;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 20px;
+            flex: 1;
+        }
+        .left-panel, .right-panel {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .left-panel {
+            flex: 1;
+        }
+        .right-panel {
+            flex: 1;
+        }
+        h1 {
+            color: #3e3e3e;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 2px dashed #4e73df;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button {
+            background-color: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2e59d9;
+        }
+        #log-box {
+            white-space: pre-line;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            height: 300px;
+            overflow-y: scroll;
+            font-size: 14px;
+            text-align: left;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4e73df;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        CUSTOMER SEGMENTATION ANALYZER
+    </header>
+
+    <div class="main-container">
+        <!-- Left Panel: Upload -->
+        <div class="left-panel">
+            <h1>Upload Your Dataset Here</h1>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="dataset" accept=".csv" required>
+                <br>
+                <button type="submit">Generate Report</button>
+            </form>
+
+            <div id="log-box">
+                <em>Logs will appear here...</em>
+            </div>
+        </div>
+
+        <!-- Right Panel: Instructions -->
+        <div class="right-panel">
+            <h1>About Customer Segmentation</h1>
+            <p>
+                Customer segmentation is the practice of dividing a customer base into groups of individuals 
+                that are similar in specific ways such as age, gender, interests, and spending habits. 
+                This helps businesses target different categories of consumers more effectively.
+            </p>
+            <h3>Instructions</h3>
+            <ul>
+                <li><strong>CSV Format:</strong> The dataset must be a .csv file with proper headers.</li>
+                <li><strong>Upload:</strong> Click the upload area and select your CSV file.</li>
+                <li><strong>Report:</strong> After uploading, a report will be automatically generated.</li>
+                <li><strong>Summary:</strong> The generated report will be summarized by our chatbot, and end users will have the ability to ask follow-up questions based on the summary. </li>
+                <li><strong>Logs:</strong> Progress and system messages will appear in the log box.</li>
+            </ul>
+            <h3>Definitions</h3>
+            <ul>
+                <li><strong>RFM:</strong> RFM stands for Recency, Frequency, and Monetary analysis.This method is used to segment customers for targeted marketing campaigns such as identifying loyal, at-risk, or new customers.
+                <ul>
+                    <li> <b>Recency:</b> How recently a customer made a purchase </li>
+                    <li> <b>Frequency:</b> How often they make purchases </li>
+                    <li> <b>Monetary:</b> How much money they spend </li>
+                </ul>
+                </li>
+                <li><strong>Churn Risk:</strong> Measures the likelihood of a customer leaving or cancelling a service.</li>
+                <li><strong>Boxplot:</strong> Visualizes data distribution using quartiles and highlights outliers.                </li>
+                <li><strong>Clusters in KMeans:</strong> Groups similar data points by minimizing distance to cluster centroids.</li>
+                <li><strong>Violin Plot:</strong> Combines boxplot and KDE to show data distribution and density.</li>
+                <li><strong>Heatmap:</strong> Uses color to represent values in a matrix, highlighting relationships or patterns.</li>
+                <li><strong>PCA (Principal Component Analysis):</strong> Reduces data dimensions by extracting uncorrelated components with maximum variance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Customer Segmentation Analyzer
+    </footer>
+
+    <script>
+        async function fetchLogs() {
+            try {
+                const response = await fetch('/get_logs');
+                const data = await response.json();
+                document.getElementById('log-box').innerText = data.logs.join('\n');
+            } catch (err) {
+                console.error('Error fetching logs:', err);
+            }
+        }
+
+        setInterval(fetchLogs, 1000);
+    </script>
+</body>
+</html>
