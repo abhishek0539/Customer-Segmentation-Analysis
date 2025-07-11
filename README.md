@@ -137,7 +137,7 @@ http://127.0.0.1:5000
 
 ## Sample Use Case
 
-1. Upload a transactional dataset or use one from `uploads/`.
+1. Upload a transactional dataset or use one test dataset from `uploads/`.
 2. The system automatically generates a PDF report (`report.pdf`) containing:
    - Cluster visuals
    - Demographic segmentation
