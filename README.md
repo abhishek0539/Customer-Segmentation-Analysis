@@ -90,9 +90,8 @@ Each report is refreshed for every new dataset upload. Previous summaries are au
 | OCR/Image Tools  | PyPDF2, pdf2image, Pillow     |
 | AI Integration   | Google Generative AI (Gemini) |
 
-## Folder
+## Folder Structure
 <img width="339" height="510" alt="Screenshot 2025-07-11 at 12 39 13 PM" src="https://github.com/user-attachments/assets/cf64809e-190a-4a2d-91ba-71119708fe7f" />
- Structure
 
 
 ## Setup Instructions
