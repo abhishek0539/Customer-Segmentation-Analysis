@@ -90,21 +90,10 @@ Each report is refreshed for every new dataset upload. Previous summaries are au
 | OCR/Image Tools  | PyPDF2, pdf2image, Pillow     |
 | AI Integration   | Google Generative AI (Gemini) |
 
-## Folder Structure
+## Folder
+<img width="339" height="510" alt="Screenshot 2025-07-11 at 12 39 13 PM" src="https://github.com/user-attachments/assets/cf64809e-190a-4a2d-91ba-71119708fe7f" />
+ Structure
 
-```
-Cust_segmentation/
-├── app.py                  # Main Flask app
-├── analyse.py              # Data analysis and report generation
-├── chatbot.py              # AI summary and Q&A handling
-├── logger.py               # Log tracking
-├── templates/              # HTML interface templates
-├── static/reports/         # Output PDF files
-├── uploads/                # Uploaded CSVs
-├── test_datasets/          # Sample transactional datasets for testing
-├── requirements.txt        # Python dependencies
-└── README.md               # Documentation
-```
 
 ## Setup Instructions
 
