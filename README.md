@@ -4,7 +4,7 @@
 
 This project is an end-to-end system for conducting customer segmentation using transactional data and generating analytical reports and business insights powered by Google Gemini AI. The system supports PDF report generation, automated summarization, and natural language Q&A functionality.
 
-[Click here to watch demo video](https://drive.google.com/file/d/1JgmYVtG43oeIy0nJablAso2rkaKxR33W/view?usp=sharing)
+[Click here to watch demo video](https://drive.google.com/file/d/124lEttK1cVTRsJ5S1vPYK21P3mrlfN1q/view?usp=sharing)
 
 ## Project Overview
 
