@@ -98,25 +98,25 @@ Each report is refreshed for every new dataset upload. Previous summaries are au
 Follow the steps below to set up and run the application locally on your device:
 
 ### 1. Clone the Repository:
-`git clone https://github.com/yourusername/your-repo-name.git`
-`cd your-repo-name`
+git clone https://github.com/abhishek0539/Customer-Segmentation-Analysis.git
+cd Customer-Segmentation-Analysis
 
 ### 2. Create and Activate a Virtual Environment:
-`python -m venv venv`
-`source venv/bin/activate`  
-On Windows, use: `venv\Scripts\activate`
+python -m venv venv
+source venv/bin/activate
+On Windows, use: venv\Scripts\activate
 
 ### 3. Install Dependencies
-`pip install -r requirements.txt`
+pip install -r requirements.txt
 
 ### 4. Install Poppler
-`brew install poppler`
+brew install poppler
 
 ### 5. Run the Application
-`python app.py`
+python app.py
 
 The app will be accessible at:
-`http://127.0.0.1:5000`
+http://127.0.0.1:5000
 
 ## Sample Use Case
 
