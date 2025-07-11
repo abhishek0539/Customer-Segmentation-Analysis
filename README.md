@@ -1,15 +1,13 @@
-# Customer-Segmentation-Analysis
+# Customer Segmentation Analyzer
 
-# Customer Segmentation & AI-Powered Business Insights
+This project is an end to end system for conducting customer segmentation using data (transactional or other) and generating analytical reports and business insights powered by Google Gemini AI. The system supports PDF report generation, automated summarization, and natural language Q&A functionality.
 
-This project is an end-to-end system for conducting customer segmentation using transactional data and generating analytical reports and business insights powered by Google Gemini AI. The system supports PDF report generation, automated summarization, and natural language Q&A functionality.
-
-[Click here to watch demo video](https://drive.google.com/file/d/124lEttK1cVTRsJ5S1vPYK21P3mrlfN1q/view?usp=sharing)
+[CLICK HERE TO WATCH DEMO VIDEO](https://drive.google.com/file/d/124lEttK1cVTRsJ5S1vPYK21P3mrlfN1q/view?usp=sharing)
 
 ## Project Overview
 
 This platform allows analysts or business users to:
-- Upload transactional datasets in CSV format.
+- Upload datasets in CSV format.
 - Automatically generate detailed analytical reports.
 - Summarize findings using generative AI.
 - Ask follow-up questions and receive intelligent responses.
@@ -19,13 +17,13 @@ This platform allows analysts or business users to:
 ## Functional Workflow
 
 ### 1. Dataset Upload
-Users upload a CSV file containing transactional data with typical columns such as:
+Users upload a CSV file containing data with typical columns such as:
 - Customer ID
 - Invoice Date
 - Net Amount or Transaction Value
 - Gender, Age, and other optional demographic information
 
-> Note: A few sample transactional datasets are included in the project to help new users quickly test and explore the tool without needing to prepare custom data.
+> Note: A few sample datasets are included in the project to help new users quickly test and explore the tool without needing to prepare custom data.
 
 ### 2. Automated Report Generation
 Once uploaded, the system generates a multi-page `report.pdf` via `analyse.py`, which includes:
@@ -78,7 +76,7 @@ The following reports can be downloaded:
 - `report.pdf`: Standard analysis generated using data science models and visualizations
 - `chatbot_summary.pdf`: AI-generated business summary and optional Q&A content
 
-Each report is refreshed for every new dataset upload. Previous summaries are automatically removed to avoid confusion.
+Each report is refreshed for every new dataset upload. Previous summaries and logs are automatically removed to avoid confusion.
 
 ## Technical Stack
 
@@ -113,23 +111,33 @@ Follow the steps below to set up and run the application locally on your device:
 ```bash
 python -m venv venv
 source venv/bin/activate
-On Windows, use: venv\Scripts\activate
 ```
-### 3. Install Dependencies
+
+> Note: On Windows, use: venv\Scripts\activate
+
+4. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-### 4. Install Poppler
+5. Install Poppler
+```bash
 brew install poppler
+```
 
-### 5. Run the Application
+6. Run the Application
+```bash
 python app.py
+```
 
-The app will be accessible at:
+7. The app will be accessible at:
+```bash
 http://127.0.0.1:5000
+```
 
 ## Sample Use Case
 
-1. Upload a transactional dataset or use one from `test_datasets/`.
+1. Upload a transactional dataset or use one from `uploads/`.
 2. The system automatically generates a PDF report (`report.pdf`) containing:
    - Cluster visuals
    - Demographic segmentation
