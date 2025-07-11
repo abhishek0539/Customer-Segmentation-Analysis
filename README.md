@@ -95,19 +95,28 @@ Each report is refreshed for every new dataset upload. Previous summaries are au
 
 
 ## Setup Instructions
+Follow the steps below to set up and run the application locally on your device:
 
-### 1. Install dependencies:
-pip install -r requirements.txt
+### 1. Clone the Repository:
+`git clone https://github.com/yourusername/your-repo-name.git`
+`cd your-repo-name`
 
-### 2. Install Poppler (for PDF image conversion):
-- Windows: [Poppler for Windows](http://blog.alivate.com.au/poppler-windows/) and add to PATH
-- Linux: `sudo apt install poppler-utils`
-- macOS: `brew install poppler`
+### 2. Create and Activate a Virtual Environment:
+`python -m venv venv`
+`source venv/bin/activate`  
+On Windows, use: `venv\Scripts\activate`
 
-### 3. Run the Flask application:
-python app.py
+### 3. Install Dependencies
+`pip install -r requirements.txt`
 
-Access the application at: `http://127.0.0.1:5000`
+### 4. Install Poppler
+`brew install poppler`
+
+### 5. Run the Application
+`python app.py`
+
+The app will be accessible at:
+`http://127.0.0.1:5000`
 
 ## Sample Use Case
 
