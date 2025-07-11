@@ -97,15 +97,24 @@ Each report is refreshed for every new dataset upload. Previous summaries are au
 ## Setup Instructions
 Follow the steps below to set up and run the application locally on your device:
 
-### 1. Clone the Repository:
-git clone https://github.com/abhishek0539/Customer-Segmentation-Analysis.git
-cd Customer-Segmentation-Analysis
+1. Clone the project
 
-### 2. Create and Activate a Virtual Environment:
+```bash
+  git clone https://github.com/abhishek0539/Customer-Segmentation-Analysis.git
+```
+
+2. Go to the project directory
+
+```bash
+  cd Customer-Segmentation-Analysis
+```
+
+3. Create and Activate a Virtual Environment:
+```bash
 python -m venv venv
 source venv/bin/activate
 On Windows, use: venv\Scripts\activate
-
+```
 ### 3. Install Dependencies
 pip install -r requirements.txt
 
